@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>Vikas Aggarwal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="boot">
+  <svg class="boot-mark" viewBox="0 0 24 24" fill="#fff"><path d="M16.365 1.43c0 1.14-.42 2.13-1.28 2.98-.86.86-1.88 1.35-3.08 1.29-.06-1.1.42-2.16 1.28-3.02.86-.87 2.03-1.35 3.08-1.25zM20.55 17.02c-.62 1.42-.92 2.05-1.72 3.31-1.12 1.75-2.7 3.93-4.66 3.95-1.74.02-2.19-1.14-4.55-1.13-2.36.01-2.85 1.15-4.6 1.13-1.96-.02-3.45-1.98-4.57-3.73-3.14-4.88-3.47-10.6-1.53-13.65 1.38-2.16 3.55-3.42 5.6-3.42 2.08 0 3.39 1.14 5.11 1.14 1.67 0 2.68-1.14 5.09-1.14 1.82 0 3.75.99 5.13 2.7-4.5 2.47-3.77 8.93 1.7 10.84z"/></svg>
+  <div class="boot-track"><div class="boot-fill"></div></div>
+</div>
+
+<div id="sys-overlay"><div id="sys-content"></div></div>
+
+<div id="desktop">
+  <svg id="wallpaper" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" viewBox="0 0 1600 1000" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#1a1a24"/><stop offset="45%" stop-color="#3a1420"/><stop offset="100%" stop-color="#5c0f18"/>
+      </linearGradient>
+      <radialGradient id="glow" cx="70%" cy="30%" r="60%">
+        <stop offset="0%" stop-color="#ff3b3b" stop-opacity="0.35"/><stop offset="100%" stop-color="#ff3b3b" stop-opacity="0"/>
+      </radialGradient>
+    </defs>
+    <rect width="1600" height="1000" fill="url(#sky)"/>
+    <rect width="1600" height="1000" fill="url(#glow)"/>
+    <g stroke="rgba(255,255,255,0.07)" stroke-width="1.5" fill="none">
+      <path d="M0,0 L1600,1000 M1600,0 L0,1000 M800,0 L800,1000 M0,500 L1600,500 M400,0 L1200,1000 M1200,0 L400,1000 M0,250 L1600,750 M0,750 L1600,250"/>
+      <circle cx="800" cy="500" r="90" /><circle cx="800" cy="500" r="200" /><circle cx="800" cy="500" r="340" /><circle cx="800" cy="500" r="500" /><circle cx="800" cy="500" r="680" />
+    </g>
+    <g stroke="rgba(255,59,59,0.12)" stroke-width="2" fill="none">
+      <path d="M800,500 L800,0 M800,500 L1600,500 M800,500 L1400,1000 M800,500 L200,1000"/>
+    </g>
+  </svg>
+  <div id="desktop-icons">
+    <div class="dicon" data-open="notes"><div class="thumb">📝</div><div class="name">read-me.txt</div></div>
+    <div class="dicon" data-open="preview"><div class="thumb pdf">PDF</div><div class="name">Resume.pdf</div></div>
+  </div>
+</div>
+
+<div id="menubar">
+  <div class="mb-left">
+    <div class="apple-logo" id="apple-btn"><svg width="14" height="14" viewBox="0 0 24 24" fill="#fff"><path d="M16.365 1.43c0 1.14-.42 2.13-1.28 2.98-.86.86-1.88 1.35-3.08 1.29-.06-1.1.42-2.16 1.28-3.02.86-.87 2.03-1.35 3.08-1.25zM20.55 17.02c-.62 1.42-.92 2.05-1.72 3.31-1.12 1.75-2.7 3.93-4.66 3.95-1.74.02-2.19-1.14-4.55-1.13-2.36.01-2.85 1.15-4.6 1.13-1.96-.02-3.45-1.98-4.57-3.73-3.14-4.88-3.47-10.6-1.53-13.65 1.38-2.16 3.55-3.42 5.6-3.42 2.08 0 3.39 1.14 5.11 1.14 1.67 0 2.68-1.14 5.09-1.14 1.82 0 3.75.99 5.13 2.7-4.5 2.47-3.77 8.93 1.7 10.84z"/></svg></div>
+    <div class="app-name" id="active-app-name">Finder</div>
+    <div class="mb-menu-item">File</div><div class="mb-menu-item">Edit</div><div class="mb-menu-item">View</div><div class="mb-menu-item">Window</div><div class="mb-menu-item">Help</div>
+  </div>
+  <div class="mb-right">
+    <div class="grp mono" style="font-size:12px;" id="weather-btn">☁️ 34°C</div>
+    <div class="grp">🔊</div>
+    <div class="grp" id="cc-btn">⎘</div>
+    <div class="grp" id="wifi-btn">📶</div>
+    <div class="grp" id="batt-btn">🔋 92%</div>
+    <div class="clock mono" id="mb-clock">--:--</div>
+  </div>
+</div>
+
+<div class="mb-dropdown" id="apple-dropdown" style="left:8px;">
+  <div class="dd-item" data-sys="about">About This Mac</div>
+  <div class="dd-sep"></div>
+  <div class="dd-item" data-sys="settingsapp">System Settings…</div>
+  <div class="dd-sep"></div>
+  <div class="dd-item" data-sys="sleep">Sleep</div>
+  <div class="dd-item" data-sys="restart">Restart…</div>
+  <div class="dd-item" data-sys="shutdown">Shut Down…</div>
+  <div class="dd-sep"></div>
+  <div class="dd-item" data-sys="lock">Lock Screen</div>
+  <div class="dd-item" data-sys="logout">Log Out Vikas Aggarwal…</div>
+</div>
+
+<div class="mb-dropdown" id="wifi-dropdown" style="right:150px;">
+  <div class="dd-sub">Wi-Fi</div>
+  <div class="dd-item">Vikas's Home <span class="dd-check">✓</span></div>
+  <div class="dd-sep"></div>
+  <div class="dd-sub">Other Networks</div>
+  <div class="dd-item">Neighbour_5G</div>
+  <div class="dd-item">Airtel_4G_Hotspot</div>
+  <div class="dd-sep"></div>
+  <div class="dd-item">Wi-Fi Settings…</div>
+</div>
+
+<div class="panel" id="cc-panel">
+  <div class="cc-row">
+    <div class="cc-toggle on" id="cc-wifi">📶 Wi-Fi · on</div>
+    <div class="cc-toggle on" id="cc-bt">🔵 Bluetooth</div>
+  </div>
+  <div class="slider-row"><div class="lbl">Display</div><input type="range" min="0" max="100" value="80" id="cc-display"></div>
+  <div class="slider-row"><div class="lbl">Sound</div><input type="range" min="0" max="100" value="55" id="cc-sound"></div>
+</div>
+
+<div class="panel" id="notif-panel">
+  <div class="notif-date" id="notif-date-txt">Saturday, July 11</div>
+  <div class="notif-item" id="notif-weather">🌤️ Weather · open forecast</div>
+  <div class="notif-item" id="notif-messages">💬 Messages · 7 unread</div>
+</div>
+
+<div class="panel" id="batt-panel">
+  <h4>Battery</h4>
+  <div class="batt-line"><b>Battery 92%</b></div>
+  <div class="batt-line">Power Source: Power Adapter</div>
+  <div class="batt-line">No Apps Using Significant Energy</div>
+</div>
+
+<div class="win" id="win-finder" data-app="Finder" style="top:64px;left:6%;width:680px;">
+  <div class="win-bar"><div class="traffic"><span class="t-close" data-act="close"></span><span class="t-min" data-act="min"></span><span class="t-max" data-act="max"></span></div><div class="win-bar-title" id="finder-title">Home</div></div>
+  <div class="win-toolbar"><span class="tb-ic">‹</span><span class="tb-ic">›</span><span class="tb-title" id="finder-tb-title">Home</span><span class="tb-ic">▦</span><span class="tb-ic">☰</span><span class="tb-ic">⇪</span><span class="tb-ic">🔍</span></div>
+  <div class="finder-body">
+    <div class="finder-sidebar">
+      <div class="sb-title">Favourites</div>
+      <div class="sb-item active" data-pane="home">🏠 Home</div>
+      <div class="sb-item" data-pane="applications">▦ Applications</div>
+      <div class="sb-item" data-pane="documents">📄 Documents</div>
+      <div class="sb-item" data-pane="projects">📁 Projects</div>
+      <div class="sb-item" data-pane="skills">🧩 Skills</div>
+      <div class="sb-item" data-pane="experience">💼 Experience</div>
+      <div class="sb-item" data-pane="contact">✉️ Contact</div>
+      <div class="sb-title">Locations</div>
+      <div class="sb-item" data-pane="home">☁️ iCloud Drive</div>
+      <div class="sb-item" data-pane="home">🏠 vikasaggarwal</div>
+    </div>
+    <div class="finder-main" id="finder-pane"></div>
+  </div>
+</div>
+
+<div class="win" id="win-notes" data-app="Notes" style="top:86px;left:9%;">
+  <div class="win-bar"><div class="traffic"><span class="t-close" data-act="close"></span><span class="t-min" data-act="min"></span><span class="t-max" data-act="max"></span></div><div class="win-bar-title">Notes</div></div>
+  <div class="win-content"><div class="notes-shell">
+    <div class="notes-list" id="notes-list"></div>
+    <div class="notes-detail" id="notes-detail"></div>
+  </div></div>
+</div>
+
+<div class="win" id="win-preview" data-app="Preview" style="top:56px;left:13%;">
+  <div class="win-bar"><div class="traffic"><span class="t-close" data-act="close"></span><span class="t-min" data-act="min"></span><span class="t-max" data-act="max"></span></div><div class="win-bar-title">Resume.pdf</div></div>
+  <div class="win-content"><div style="background:#4a4a4a;padding:24px;display:flex;justify-content:center;">
+    <div style="width:500px;background:#fff;color:#1a1a1a;padding:36px 42px;font-size:11.5px;line-height:1.55;box-shadow:0 10px 30px rgba(0,0,0,0.4);font-family:'Inter',serif;">
+      <h1 style="font-size:19px;margin:0 0 3px;text-align:center;">Vikas Aggarwal</h1>
+      <div style="text-align:center;font-size:10.5px;color:#444;margin-bottom:14px;">New Delhi, India &nbsp;|&nbsp; aggarwalvikas294@gmail.com &nbsp;|&nbsp; +91 8882546726 &nbsp;|&nbsp; linkedin.com/in/vikas-aggarwal-1119282b4</div>
+      <div style="font-size:11.5px;color:#333;margin-bottom:12px;">Information Technology undergraduate with strong fundamentals in Java, OOPS, DBMS, Operating Systems, and Computer Networking. Good problem-solving skills and understanding of software development concepts.</div>
+
+      <div style="font-size:11px;text-transform:uppercase;letter-spacing:.6px;border-bottom:1px solid #333;padding-bottom:3px;margin:14px 0 7px;font-weight:700;">Education</div>
+      <div style="display:flex;justify-content:space-between;font-weight:600;">Maharaja Surajmal Institute of Technology<span></span></div>
+      <div style="font-style:italic;color:#444;font-size:10.5px;">B.Tech, Information Technology — New Delhi, India</div>
+
+      <div style="font-size:11px;text-transform:uppercase;letter-spacing:.6px;border-bottom:1px solid #333;padding-bottom:3px;margin:14px 0 7px;font-weight:700;">Experience</div>
+      <div style="display:flex;justify-content:space-between;font-weight:600;"><span>Full-Stack Web Development Intern</span><span>Jun – Jul 2025</span></div>
+      <div style="font-style:italic;color:#444;font-size:10.5px;margin-bottom:5px;">Prodigy InfoTech — Remote</div>
+      <ul style="margin:2px 0 10px;padding-left:15px;"><li>Completed a 1-month project-based internship in full-stack web development.</li></ul>
+
+      <div style="font-size:11px;text-transform:uppercase;letter-spacing:.6px;border-bottom:1px solid #333;padding-bottom:3px;margin:14px 0 7px;font-weight:700;">Projects</div>
+      <div style="font-weight:600;">Netflix Clone — Web Development</div>
+      <ul style="margin:2px 0 8px;padding-left:15px;"><li>Fully responsive static clone of the Netflix homepage using semantic HTML5 &amp; CSS3.</li><li>Responsive layouts with Flexbox &amp; Grid across desktop, tablet, mobile.</li></ul>
+      <div style="font-weight:600;">DB-Demo-App — Email Management (Full Stack)</div>
+      <ul style="margin:2px 0 10px;padding-left:15px;"><li>REST API with Express.js, MongoDB + Mongoose for persistence.</li><li>Deployed and managed using Kubernetes. — github.com/vikasaggar7792/db-demo-app</li></ul>
+
+      <div style="font-size:11px;text-transform:uppercase;letter-spacing:.6px;border-bottom:1px solid #333;padding-bottom:3px;margin:14px 0 7px;font-weight:700;">Certifications</div>
+      <div style="font-weight:600;">Workshop on Generative AI — DUCAT</div>
+      <div style="color:#444;font-size:10.5px;margin-bottom:8px;">Exposure to AI concepts, prompt engineering, and practical implementation.</div>
+
+      <div style="font-size:11px;text-transform:uppercase;letter-spacing:.6px;border-bottom:1px solid #333;padding-bottom:3px;margin:14px 0 7px;font-weight:700;">Skills</div>
+      <div style="color:#333;">HTML, Java, CSS, JavaScript, MongoDB, React.js, Node.js, Git, GitHub, Docker, Jenkins, Kubernetes, AWS, Problem Solving, Communication, Teamwork.</div>
+    </div>
+  </div></div>
+</div>
+
+<div class="win" id="win-chatgpt" data-app="ChatGPT" style="top:96px;left:17%;">
+  <div class="win-bar"><div class="traffic"><span class="t-close" data-act="close"></span><span class="t-min" data-act="min"></span><span class="t-max" data-act="max"></span></div><div class="win-bar-title">ChatGPT</div></div>
+  <div class="win-content"><div class="gpt-shell">
+    <div class="gpt-side" style="display:flex;flex-direction:column;">
+      <div class="gs-new">＋ New chat</div>
+      <div class="gs-item">🔍 Search chats</div>
+      <div class="gs-item">🖼️ Images</div>
+      <div class="gs-item">▦ Apps</div>
+      <div class="gs-item">🔬 Deep research</div>
+      <div class="gs-foot">👤 Vikas · Free</div>
+    </div>
+    <div class="gpt-main">
+      <div id="gpt-log" class="gpt-chat-log" style="display:none;"></div>
+      <div id="gpt-landing">
+        <div class="gm-title">Where should we begin?</div>
+        <div class="gpt-inputbar"><input type="text" id="gpt-input" placeholder="Ask anything"><span>🎙️</span></div>
+        <div class="gpt-chips">
+          <div class="gpt-chip" data-q="why">why should you hire him?</div>
+          <div class="gpt-chip" data-q="project">what's his best project?</div>
+          <div class="gpt-chip" data-q="intern">tell me about his internship</div>
+          <div class="gpt-chip" data-q="skills">what does he know?</div>
+        </div>
+      </div>
+    </div>
+  </div></div>
+</div>
+
+<div class="win" id="win-x" data-app="X" style="top:80px;left:22%;">
+  <div class="win-bar"><div class="traffic"><span class="t-close" data-act="close"></span><span class="t-min" data-act="min"></span><span class="t-max" data-act="max"></span></div><div class="win-bar-title">X</div></div>
+  <div class="win-content"><div class="social-body">
+    <div class="social-banner x">@Vikasaggarw7792</div>
+    <div class="social-content">
+      <div class="social-avatar" id="x-avatar"></div>
+      <div class="social-name">Vikas Aggarwal</div>
+      <div class="social-headline">IT undergraduate · building &amp; learning in public · full-stack + a bit of everything</div>
+      <div class="social-stats">@Vikasaggarw7792</div>
+      <a class="social-btn" style="background:#0b0b0f;" href="https://x.com/Vikasaggarw7792" target="_blank">Open on X</a>
+    </div>
+  </div></div>
+</div>
+
+<div class="win" id="win-linkedin" data-app="LinkedIn" style="top:100px;left:27%;">
+  <div class="win-bar"><div class="traffic"><span class="t-close" data-act="close"></span><span class="t-min" data-act="min"></span><span class="t-max" data-act="max"></span></div><div class="win-bar-title">LinkedIn</div></div>
+  <div class="win-content"><div class="social-body">
+    <div class="social-banner">LEARN. BUILD. SHIP.</div>
+    <div class="social-content">
+      <div class="social-avatar" id="li-avatar"></div>
+      <div class="social-name">Vikas Aggarwal</div>
+      <div class="social-headline">Information Technology Undergraduate · Full-Stack Web Dev Intern @ Prodigy InfoTech</div>
+      <div class="social-stats">New Delhi, India</div>
+      <a class="social-btn" href="https://linkedin.com/in/vikas-aggarwal-1119282b4/" target="_blank">Open on LinkedIn</a>
+    </div>
+  </div></div>
+</div>
+
+<div class="win" id="win-messages" data-app="Messages" style="top:70px;left:32%;">
+  <div class="win-bar"><div class="traffic"><span class="t-close" data-act="close"></span><span class="t-min" data-act="min"></span><span class="t-max" data-act="max"></span></div><div class="win-bar-title">Messages</div></div>
+  <div class="win-content"><div class="msg-shell">
+    <div class="msg-list" id="msg-list"></div>
+    <div class="msg-thread">
+      <div class="msg-thread-head" id="msg-head">To: —</div>
+      <div class="msg-thread-body" id="msg-body"></div>
+    </div>
+  </div></div>
+</div>
+
+<div class="win" id="win-photos" data-app="Photos" style="top:110px;left:36%;">
+  <div class="win-bar"><div class="traffic"><span class="t-close" data-act="close"></span><span class="t-min" data-act="min"></span><span class="t-max" data-act="max"></span></div><div class="win-bar-title">Photos</div></div>
+  <div class="win-content"><div class="photos-body">
+    <div class="photos-hero-wrap"><img class="photos-hero" id="photos-hero-img" alt="Vikas Aggarwal"></div>
+  </div></div>
+</div>
+
+<div class="win" id="win-photobooth" data-app="Photo Booth" style="top:60px;left:40%;">
+  <div class="win-bar"><div class="traffic"><span class="t-close" data-act="close"></span><span class="t-min" data-act="min"></span><span class="t-max" data-act="max"></span></div><div class="win-bar-title">Photo Booth</div></div>
+  <div class="win-content"><div class="pb-body">
+    <div class="pb-video-wrap" id="pb-wrap"><div class="pb-msg" id="pb-msg">Click "Start Camera" to use your webcam. Nothing leaves your browser.</div></div>
+    <div class="pb-controls">
+      <button id="pb-start" style="background:#3a3b42;border:none;color:#fff;padding:9px 16px;border-radius:8px;cursor:pointer;font-size:12.5px;">Start Camera</button>
+      <div class="pb-shutter" id="pb-shutter" title="Take photo"></div>
+    </div>
+    <div class="pb-strip" id="pb-strip"></div>
+  </div></div>
+</div>
+
+<div class="win" id="win-music" data-app="Music" style="top:92px;left:44%;">
+  <div class="win-bar"><div class="traffic"><span class="t-close" data-act="close"></span><span class="t-min" data-act="min"></span><span class="t-max" data-act="max"></span></div><div class="win-bar-title">Music</div></div>
+  <div class="win-content"><div class="music-body">
+    <div class="music-rows">
+      <div class="music-side" id="music-side"></div>
+      <div class="music-main" id="music-main"></div>
+    </div>
+    <div class="now-playing-bar" id="now-playing-bar" style="display:none;">
+      <div class="np-ic" id="np-ic">🎵</div>
+      <div class="np-info"><div class="np-title" id="np-title">—</div><div class="np-artist" id="np-artist">—</div></div>
+      <div class="np-controls"><span id="np-prev">⏮</span><span class="np-play" id="np-play">▶</span><span id="np-next">⏭</span></div>
+      <div class="np-progress"><span class="np-time" id="np-elapsed">0:00</span><div class="np-track" id="np-track"><div class="np-fill" id="np-fill"></div></div><span class="np-time" id="np-total">0:00</span></div>
+    </div>
+  </div></div>
+</div>
+
+<div class="win" id="win-terminal" data-app="Terminal" style="top:66px;left:48%;">
+  <div class="win-bar"><div class="traffic"><span class="t-close" data-act="close"></span><span class="t-min" data-act="min"></span><span class="t-max" data-act="max"></span></div><div class="win-bar-title">vikasaggarw7792 — -zsh — 80×24</div></div>
+  <div class="win-content"><div class="term-body" id="term-log">
+    <div class="term-out">Type 'help' for available commands</div>
+    <div class="term-row"><span class="p1">vikasaggarw7792@Vikas-MacBook-Air</span><span>:</span><span class="p2">~%</span><input type="text" id="term-input" autocomplete="off" spellcheck="false"></div>
+  </div></div>
+</div>
+
+<div class="win" id="win-settings" data-app="System Settings" style="top:104px;left:52%;">
+  <div class="win-bar"><div class="traffic"><span class="t-close" data-act="close"></span><span class="t-min" data-act="min"></span><span class="t-max" data-act="max"></span></div><div class="win-bar-title">System Settings</div></div>
+  <div class="win-content"><div class="settings-shell">
+    <div class="settings-side">
+      <div class="ss-item active" data-spane="skills">🧩 Skills</div>
+      <div class="ss-item" data-spane="wifi">📶 Wi-Fi</div>
+      <div class="ss-item" data-spane="bt">🔵 Bluetooth</div>
+      <div class="ss-item" data-spane="sound">🔊 Sound</div>
+      <div class="ss-item" data-spane="about">ℹ️ About</div>
+    </div>
+    <div class="settings-main" id="settings-pane"></div>
+  </div></div>
+</div>
+
+<div class="win" id="win-weather" data-app="Weather" style="top:74px;left:56%;">
+  <div class="win-bar"><div class="traffic"><span class="t-close" data-act="close"></span><span class="t-min" data-act="min"></span><span class="t-max" data-act="max"></span></div><div class="win-bar-title">Weather</div></div>
+  <div class="win-content"><div class="weather-shell">
+    <div class="weather-list" id="weather-list"></div>
+    <div class="weather-main" id="weather-main"></div>
+  </div></div>
+</div>
+
+<div class="win" id="win-trash" data-app="Bin" style="top:118px;left:60%;">
+  <div class="win-bar"><div class="traffic"><span class="t-close" data-act="close"></span><span class="t-min" data-act="min"></span><span class="t-max" data-act="max"></span></div><div class="win-bar-title">Bin</div></div>
+  <div class="win-toolbar"><span class="tb-title">Bin</span><span class="tb-ic" id="bin-empty-btn" style="color:var(--accent);font-size:12px;">Empty Bin</span></div>
+  <div class="win-content"><div class="bin-body">
+    <div class="bin-list" id="bin-list"></div>
+    <div class="bin-footer" id="bin-footer">2 items</div>
+  </div></div>
+</div>
+
+<div id="dock-wrap">
+  <div id="dock">
+    <div class="dock-item i-finder" data-app="finder"><span>🙂</span><div class="dock-tip">Finder</div></div>
+    <div class="dock-item i-notes" data-app="notes"><span>📝</span><div class="dock-tip">Notes</div></div>
+    <div class="dock-item i-chatgpt" data-app="chatgpt"><span style="font-weight:800;">✦</span><div class="dock-tip">ChatGPT</div></div>
+    <div class="dock-item i-x" data-app="x"><span style="font-weight:800;">𝕏</span><div class="dock-tip">X</div></div>
+    <div class="dock-item i-linkedin" data-app="linkedin"><span style="font-weight:800;font-size:16px;">in</span><div class="dock-tip">LinkedIn</div></div>
+    <div class="dock-item i-messages" data-app="messages"><span>💬</span><div class="dock-tip">Messages</div></div>
+    <div class="dock-item i-photos" data-app="photos"><span>🖼️</span><div class="dock-tip">Photos</div></div>
+    <div class="dock-item i-photobooth" data-app="photobooth"><span>📷</span><div class="dock-tip">Photo Booth</div></div>
+    <div class="dock-item i-music" data-app="music"><span>🎵</span><div class="dock-tip">Music</div></div>
+    <div class="dock-item i-terminal" data-app="terminal"><span>&gt;_</span><div class="dock-tip">Terminal</div></div>
+    <div class="dock-item i-settings" data-app="settings"><span>⚙️</span><div class="dock-tip">Settings</div></div>
+    <div class="dock-sep"></div>
+    <div class="dock-item i-trash" data-app="trash"><span>🗑️</span><div class="dock-tip">Bin</div></div>
+  </div>
+</div>
+
+
+<script src="script.js"></script>
+</body>
+</html>
